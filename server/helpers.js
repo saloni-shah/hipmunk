@@ -41,12 +41,10 @@ module.exports.fetchDataFromProviders = function(cb){
           partionStartIndex[i] = partionStartIndex[i-1] + aggregatedResult[i-1].length;
           partionEndIndex[i] = partionStartIndex[i] + aggregatedResult[i].length - 1;
         }  
-
       }
 
       // merge all the partitions 
       let noOfPartitions = partionStartIndex.length;
-
       while(noOfPartitions > 1) {
         // Merging 2 providers at a time
         for(let p = 0; p < partionStartIndex.length-1; p += 2) {

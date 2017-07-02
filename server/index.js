@@ -5,10 +5,10 @@ let app = express()
 
 app.get('/hotels/search', function (req, res) {
   helpers.fetchDataFromProviders((error, results) => {
-  	if(error) {
-  		res.send({error: error});
-  	}
-  	res.send({results:results});
+    if(error) {
+      res.send({error: error});
+    }
+    res.send({results:results});
   });
 });
 
